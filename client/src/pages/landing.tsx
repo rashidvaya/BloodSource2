@@ -9,6 +9,7 @@ import { login, register } from "@/lib/auth";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { Link } from "wouter";
 
 interface LoginFormData {
   email: string;
@@ -167,6 +168,29 @@ export default function Landing() {
 
   return (
     <div className="min-h-screen flex flex-col bg-gray-100">
+      {/* Header/Footer moved to top */}
+      <div className="w-full bg-white border-b border-gray-200 py-4">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="flex flex-wrap justify-center text-xs sm:text-sm text-gray-500 space-x-2 sm:space-x-4">
+            <a href="#" className="hover:text-gray-700">About</a>
+            <a href="#" className="hover:text-gray-700">Download the app</a>
+            <a href="#" className="hover:text-gray-700">Boka AI</a>
+            <a href="#" className="hover:text-gray-700">Help Center</a>
+            <a href="#" className="hover:text-gray-700">Terms of Service</a>
+            <a href="#" className="hover:text-gray-700">Privacy Policy</a>
+            <a href="#" className="hover:text-gray-700">Cookie Policy</a>
+            <a href="#" className="hover:text-gray-700">Accessibility</a>
+            <a href="#" className="hover:text-gray-700">Ads Info</a>
+            <a href="#" className="hover:text-gray-700">Blog</a>
+            <Link href="/careers" className="hover:text-gray-700">Careers</Link>
+            <a href="#" className="hover:text-gray-700">Advertising</a>
+            <a href="#" className="hover:text-gray-700">Developers</a>
+            <a href="#" className="hover:text-gray-700">Settings</a>
+            <span>© 2025 RedByte Corp.</span>
+          </div>
+        </div>
+      </div>
+      
       <div className="flex-1 flex items-center justify-center px-4 py-4 sm:py-8">
         <div className="max-w-7xl w-full mx-auto">
           <div className="grid lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-center">
@@ -271,29 +295,6 @@ export default function Landing() {
                 </CardContent>
               </Card>
             </div>
-          </div>
-        </div>
-      </div>
-      
-      {/* Footer */}
-      <div className="mt-auto w-full bg-white border-t border-gray-200 py-4">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="flex flex-wrap justify-center text-xs sm:text-sm text-gray-500 space-x-2 sm:space-x-4">
-            <a href="#" className="hover:text-gray-700">About</a>
-            <a href="#" className="hover:text-gray-700">Download the app</a>
-            <a href="#" className="hover:text-gray-700">Boka AI</a>
-            <a href="#" className="hover:text-gray-700">Help Center</a>
-            <a href="#" className="hover:text-gray-700">Terms of Service</a>
-            <a href="#" className="hover:text-gray-700">Privacy Policy</a>
-            <a href="#" className="hover:text-gray-700">Cookie Policy</a>
-            <a href="#" className="hover:text-gray-700">Accessibility</a>
-            <a href="#" className="hover:text-gray-700">Ads Info</a>
-            <a href="#" className="hover:text-gray-700">Blog</a>
-            <a href="#" className="hover:text-gray-700">Careers</a>
-            <a href="#" className="hover:text-gray-700">Advertising</a>
-            <a href="#" className="hover:text-gray-700">Developers</a>
-            <a href="#" className="hover:text-gray-700">Settings</a>
-            <span>© 2025 RedByte Corp.</span>
           </div>
         </div>
       </div>
