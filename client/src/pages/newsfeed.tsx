@@ -108,51 +108,51 @@ export default function Newsfeed() {
     <div className="min-h-screen bg-gray-100">
       {/* Header */}
       <div className="bg-white border-b border-gray-200 sticky top-0 z-10">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="flex items-center justify-between h-14">
-            <div className="flex items-center space-x-4">
-              <div className="w-10 h-10 bg-facebook-blue rounded-full flex items-center justify-center">
-                <svg className="w-6 h-6 text-white" viewBox="0 0 24 24" fill="currentColor">
+        <div className="max-w-7xl mx-auto px-2 sm:px-4">
+          <div className="flex items-center justify-between h-12 sm:h-14">
+            <div className="flex items-center space-x-2 sm:space-x-4">
+              <div className="w-8 h-8 sm:w-10 sm:h-10 bg-facebook-blue rounded-full flex items-center justify-center">
+                <svg className="w-4 h-4 sm:w-6 sm:h-6 text-white" viewBox="0 0 24 24" fill="currentColor">
                   <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
                 </svg>
               </div>
-              <div className="relative">
+              <div className="relative hidden sm:block">
                 <Search className="absolute left-3 top-2.5 h-4 w-4 text-gray-400" />
                 <Input
                   placeholder="Search BloodSource"
-                  className="w-64 pl-10 bg-gray-100 rounded-full"
+                  className="w-40 sm:w-64 pl-10 bg-gray-100 rounded-full"
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                 />
               </div>
             </div>
             
-            <div className="flex items-center space-x-2">
-              <Button variant="ghost" size="sm" className="p-2">
-                <Home className="h-6 w-6 text-facebook-blue" />
+            <div className="flex items-center space-x-1 sm:space-x-2">
+              <Button variant="ghost" size="sm" className="p-1 sm:p-2 hidden sm:flex">
+                <Home className="h-5 w-5 sm:h-6 sm:w-6 text-facebook-blue" />
               </Button>
-              <Button variant="ghost" size="sm" className="p-2">
-                <Users className="h-6 w-6 text-gray-600" />
+              <Button variant="ghost" size="sm" className="p-1 sm:p-2 hidden md:flex">
+                <Users className="h-5 w-5 sm:h-6 sm:w-6 text-gray-600" />
               </Button>
-              <Button variant="ghost" size="sm" className="p-2">
-                <Play className="h-6 w-6 text-gray-600" />
+              <Button variant="ghost" size="sm" className="p-1 sm:p-2 hidden md:flex">
+                <Play className="h-5 w-5 sm:h-6 sm:w-6 text-gray-600" />
               </Button>
-              <Button variant="ghost" size="sm" className="p-2">
-                <Store className="h-6 w-6 text-gray-600" />
+              <Button variant="ghost" size="sm" className="p-1 sm:p-2 hidden lg:flex">
+                <Store className="h-5 w-5 sm:h-6 sm:w-6 text-gray-600" />
               </Button>
-              <Button variant="ghost" size="sm" className="p-2">
-                <Users className="h-6 w-6 text-gray-600" />
+              <Button variant="ghost" size="sm" className="p-1 sm:p-2 hidden lg:flex">
+                <Users className="h-5 w-5 sm:h-6 sm:w-6 text-gray-600" />
               </Button>
             </div>
             
-            <div className="flex items-center space-x-2">
-              <Avatar className="h-8 w-8">
+            <div className="flex items-center space-x-1 sm:space-x-2">
+              <Avatar className="h-6 w-6 sm:h-8 sm:w-8">
                 <AvatarImage src={currentUser?.profileImage} />
                 <AvatarFallback>{currentUser?.fullName?.[0]}</AvatarFallback>
               </Avatar>
-              <span className="text-sm font-medium">{currentUser?.fullName}</span>
-              <Button variant="ghost" size="sm" className="p-2">
-                <svg className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+              <span className="text-xs sm:text-sm font-medium hidden sm:block">{currentUser?.fullName}</span>
+              <Button variant="ghost" size="sm" className="p-1 sm:p-2">
+                <svg className="h-4 w-4 sm:h-5 sm:w-5" viewBox="0 0 20 20" fill="currentColor">
                   <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
                 </svg>
               </Button>
@@ -161,10 +161,10 @@ export default function Newsfeed() {
         </div>
       </div>
       
-      <div className="max-w-7xl mx-auto px-4 py-4">
-        <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
+      <div className="max-w-7xl mx-auto px-2 sm:px-4 py-2 sm:py-4">
+        <div className="grid grid-cols-1 lg:grid-cols-4 gap-2 sm:gap-4 lg:gap-6">
           {/* Left Sidebar */}
-          <div className="lg:col-span-1">
+          <div className="lg:col-span-1 hidden lg:block">
             <Card>
               <CardContent className="p-4">
                 <div className="flex items-center space-x-3 mb-4">
@@ -192,11 +192,11 @@ export default function Newsfeed() {
           </div>
           
           {/* Main Content */}
-          <div className="lg:col-span-2">
+          <div className="lg:col-span-2 w-full">
             {/* Stories Section */}
-            <Card className="mb-4">
-              <CardContent className="p-4">
-                <div className="flex space-x-4 overflow-x-auto pb-2">
+            <Card className="mb-2 sm:mb-4">
+              <CardContent className="p-2 sm:p-4">
+                <div className="flex space-x-2 sm:space-x-4 overflow-x-auto pb-2">
                   <div className="flex-shrink-0 relative">
                     <div className="w-24 h-32 bg-gradient-to-b from-transparent to-black rounded-xl overflow-hidden relative cursor-pointer">
                       <div className="w-full h-full bg-gray-200 flex items-center justify-center">
@@ -234,41 +234,45 @@ export default function Newsfeed() {
             </Card>
             
             {/* Create Post */}
-            <Card className="mb-4">
-              <CardContent className="p-4">
-                <div className="flex items-center space-x-3 mb-3">
-                  <Avatar className="h-10 w-10">
+            <Card className="mb-2 sm:mb-4">
+              <CardContent className="p-2 sm:p-4">
+                <div className="flex items-center space-x-2 sm:space-x-3 mb-3">
+                  <Avatar className="h-8 w-8 sm:h-10 sm:w-10">
                     <AvatarImage src={currentUser?.profileImage} />
                     <AvatarFallback>{currentUser?.fullName?.[0]}</AvatarFallback>
                   </Avatar>
                   <Input
                     placeholder="What's in your mind?"
-                    className="flex-1 bg-gray-100 rounded-full"
+                    className="flex-1 bg-gray-100 rounded-full text-sm sm:text-base"
                     value={postContent}
                     onChange={(e) => setPostContent(e.target.value)}
                   />
                 </div>
                 
-                <Separator className="my-3" />
+                <Separator className="my-2 sm:my-3" />
                 
-                <div className="flex justify-between items-center">
-                  <div className="flex space-x-4">
-                    <Button variant="ghost" size="sm" className="text-gray-600">
-                      <Video className="h-5 w-5 mr-2 text-red-500" />
-                      Live video
+                <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 sm:gap-0">
+                  <div className="flex flex-wrap gap-1 sm:gap-2 lg:gap-4">
+                    <Button variant="ghost" size="sm" className="text-gray-600 text-xs sm:text-sm p-1 sm:p-2">
+                      <Video className="h-4 w-4 sm:h-5 sm:w-5 mr-1 sm:mr-2 text-red-500" />
+                      <span className="hidden sm:inline">Live video</span>
+                      <span className="sm:hidden">Live</span>
                     </Button>
-                    <Button variant="ghost" size="sm" className="text-gray-600">
-                      <ImageIcon className="h-5 w-5 mr-2 text-green-500" />
-                      Photo/Video
+                    <Button variant="ghost" size="sm" className="text-gray-600 text-xs sm:text-sm p-1 sm:p-2">
+                      <ImageIcon className="h-4 w-4 sm:h-5 sm:w-5 mr-1 sm:mr-2 text-green-500" />
+                      <span className="hidden sm:inline">Photo/Video</span>
+                      <span className="sm:hidden">Photo</span>
                     </Button>
-                    <Button variant="ghost" size="sm" className="text-gray-600">
-                      <Smile className="h-5 w-5 mr-2 text-yellow-500" />
-                      Feeling/activity
+                    <Button variant="ghost" size="sm" className="text-gray-600 text-xs sm:text-sm p-1 sm:p-2">
+                      <Smile className="h-4 w-4 sm:h-5 sm:w-5 mr-1 sm:mr-2 text-yellow-500" />
+                      <span className="hidden lg:inline">Feeling/activity</span>
+                      <span className="lg:hidden">Feeling</span>
                     </Button>
                   </div>
-                  <Button className="bg-facebook-blue hover:bg-blue-600">
-                    <Video className="h-4 w-4 mr-2" />
-                    Create room
+                  <Button className="bg-facebook-blue hover:bg-blue-600 text-xs sm:text-sm w-full sm:w-auto">
+                    <Video className="h-3 w-3 sm:h-4 sm:w-4 mr-1 sm:mr-2" />
+                    <span className="hidden sm:inline">Create room</span>
+                    <span className="sm:hidden">Room</span>
                   </Button>
                 </div>
                 

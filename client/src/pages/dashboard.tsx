@@ -132,55 +132,55 @@ export default function Dashboard() {
   return (
     <div className="min-h-screen bg-dark-bg">
       {/* Header */}
-      <div className="bg-dark-bg border-b border-gray-700 px-4 py-3">
+      <div className="bg-dark-bg border-b border-gray-700 px-2 sm:px-4 py-2 sm:py-3">
         <div className="flex items-center justify-between">
-          <div className="flex items-center space-x-4">
+          <div className="flex items-center space-x-2 sm:space-x-4">
             <div className="flex items-center space-x-2">
-              <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
-                <Box className="h-5 w-5 text-white" />
+              <div className="w-6 h-6 sm:w-8 sm:h-8 bg-blue-600 rounded-lg flex items-center justify-center">
+                <Box className="h-3 w-3 sm:h-5 sm:w-5 text-white" />
               </div>
-              <span className="text-white text-lg font-semibold">synto</span>
+              <span className="text-white text-sm sm:text-lg font-semibold">synto</span>
             </div>
-            <div className="w-8 h-8 bg-gray-700 rounded-lg flex items-center justify-center">
-              <Smartphone className="h-5 w-5 text-white" />
+            <div className="w-6 h-6 sm:w-8 sm:h-8 bg-gray-700 rounded-lg flex items-center justify-center">
+              <Smartphone className="h-3 w-3 sm:h-5 sm:w-5 text-white" />
             </div>
           </div>
           
-          <div className="flex items-center space-x-4">
-            <div className="flex items-center space-x-2">
+          <div className="flex items-center space-x-1 sm:space-x-2 md:space-x-4">
+            <div className="flex items-center space-x-2 hidden sm:flex">
               <div className="w-6 h-4 bg-blue-600 rounded-sm"></div>
               <span className="text-white text-sm">🇺🇸</span>
             </div>
-            <Button variant="ghost" size="sm">
-              <Search className="h-5 w-5 text-gray-400" />
+            <Button variant="ghost" size="sm" className="hidden md:flex">
+              <Search className="h-4 w-4 sm:h-5 sm:w-5 text-gray-400" />
             </Button>
-            <Button variant="ghost" size="sm">
-              <Sun className="h-5 w-5 text-gray-400" />
+            <Button variant="ghost" size="sm" className="hidden lg:flex">
+              <Sun className="h-4 w-4 sm:h-5 sm:w-5 text-gray-400" />
             </Button>
-            <Button variant="ghost" size="sm">
-              <Maximize className="h-5 w-5 text-gray-400" />
+            <Button variant="ghost" size="sm" className="hidden lg:flex">
+              <Maximize className="h-4 w-4 sm:h-5 sm:w-5 text-gray-400" />
             </Button>
             <div className="relative">
               <Button variant="ghost" size="sm">
-                <Bell className="h-5 w-5 text-gray-400" />
+                <Bell className="h-4 w-4 sm:h-5 sm:w-5 text-gray-400" />
               </Button>
-              <Badge className="absolute -top-1 -right-1 h-4 w-4 p-0 bg-red-500 text-xs">1</Badge>
+              <Badge className="absolute -top-1 -right-1 h-3 w-3 sm:h-4 sm:w-4 p-0 bg-red-500 text-xs">1</Badge>
             </div>
-            <div className="relative">
+            <div className="relative hidden sm:flex">
               <Button variant="ghost" size="sm">
-                <MessageCircle className="h-5 w-5 text-gray-400" />
+                <MessageCircle className="h-4 w-4 sm:h-5 sm:w-5 text-gray-400" />
               </Button>
-              <Badge className="absolute -top-1 -right-1 h-4 w-4 p-0 bg-green-500 text-xs">1</Badge>
+              <Badge className="absolute -top-1 -right-1 h-3 w-3 sm:h-4 sm:w-4 p-0 bg-green-500 text-xs">1</Badge>
             </div>
-            <Button variant="ghost" size="sm">
-              <Bookmark className="h-5 w-5 text-gray-400" />
+            <Button variant="ghost" size="sm" className="hidden md:flex">
+              <Bookmark className="h-4 w-4 sm:h-5 sm:w-5 text-gray-400" />
             </Button>
-            <Avatar className="h-8 w-8">
+            <Avatar className="h-6 w-6 sm:h-8 sm:w-8">
               <AvatarImage src={currentUser?.profileImage} />
               <AvatarFallback>{currentUser?.fullName?.[0]}</AvatarFallback>
             </Avatar>
-            <Button variant="ghost" size="sm">
-              <Settings className="h-5 w-5 text-gray-400" />
+            <Button variant="ghost" size="sm" className="hidden sm:flex">
+              <Settings className="h-4 w-4 sm:h-5 sm:w-5 text-gray-400" />
             </Button>
           </div>
         </div>
@@ -188,33 +188,33 @@ export default function Dashboard() {
 
       <div className="flex">
         {/* Sidebar */}
-        <div className="w-64 bg-dark-bg border-r border-gray-700 h-screen overflow-y-auto">
-          <div className="p-4">
-            <div className="flex items-center space-x-2 mb-8">
-              <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
-                <Box className="h-5 w-5 text-white" />
+        <div className="w-16 sm:w-20 lg:w-64 bg-dark-bg border-r border-gray-700 h-screen overflow-y-auto">
+          <div className="p-2 sm:p-4">
+            <div className="flex items-center space-x-2 mb-4 sm:mb-8">
+              <div className="w-6 h-6 sm:w-8 sm:h-8 bg-blue-600 rounded-lg flex items-center justify-center">
+                <Box className="h-3 w-3 sm:h-5 sm:w-5 text-white" />
               </div>
-              <span className="text-white text-lg font-semibold">synto</span>
+              <span className="text-white text-sm sm:text-lg font-semibold hidden lg:block">synto</span>
             </div>
             
-            <div className="space-y-6">
+            <div className="space-y-4 sm:space-y-6">
               {sidebarItems.map((section, sectionIndex) => (
                 <div key={sectionIndex}>
-                  <h3 className="text-gray-400 text-sm font-medium mb-3">{section.section}</h3>
-                  <div className="space-y-2">
+                  <h3 className="text-gray-400 text-xs sm:text-sm font-medium mb-2 sm:mb-3 hidden lg:block">{section.section}</h3>
+                  <div className="space-y-1 sm:space-y-2">
                     {section.items.map((item, itemIndex) => (
                       <Button
                         key={itemIndex}
                         variant="ghost"
-                        className={`w-full justify-start px-3 py-2 h-auto ${
+                        className={`w-full justify-start px-1 sm:px-2 lg:px-3 py-2 h-auto ${
                           item.active 
                             ? "text-white bg-gray-700" 
                             : "text-gray-400 hover:text-white hover:bg-gray-700"
                         }`}
                       >
-                        <item.icon className="h-5 w-5 mr-3" />
-                        <span className="flex-1 text-left">{item.label}</span>
-                        {item.hasSubmenu && <ChevronRight className="h-4 w-4 ml-auto" />}
+                        <item.icon className="h-3 w-3 sm:h-4 sm:w-4 lg:h-5 lg:w-5 lg:mr-3" />
+                        <span className="flex-1 text-left text-sm hidden lg:block">{item.label}</span>
+                        {item.hasSubmenu && <ChevronRight className="h-3 w-3 sm:h-4 sm:w-4 ml-auto hidden lg:block" />}
                       </Button>
                     ))}
                   </div>
@@ -225,15 +225,15 @@ export default function Dashboard() {
         </div>
         
         {/* Main Content */}
-        <div className="flex-1 p-6">
-          <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
+        <div className="flex-1 p-2 sm:p-4 lg:p-6">
+          <div className="grid grid-cols-1 lg:grid-cols-4 gap-2 sm:gap-4 lg:gap-6">
             {/* Left Column - Welcome & Meetings */}
             <div className="lg:col-span-1">
               <Card className="bg-card-bg border-gray-700">
-                <CardContent className="p-6 text-white">
-                  <div className="mb-4">
-                    <div className="text-sm text-gray-400">Friday, Jul 11, 2025</div>
-                    <h2 className="text-2xl font-bold">Good morning, Captain!</h2>
+                <CardContent className="p-3 sm:p-4 lg:p-6 text-white">
+                  <div className="mb-3 sm:mb-4">
+                    <div className="text-xs sm:text-sm text-gray-400">Friday, Jul 11, 2025</div>
+                    <h2 className="text-lg sm:text-xl lg:text-2xl font-bold">Good morning, Captain!</h2>
                   </div>
                   
                   <div className="space-y-4 mb-6">

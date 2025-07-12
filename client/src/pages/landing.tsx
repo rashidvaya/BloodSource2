@@ -167,24 +167,24 @@ export default function Landing() {
 
   return (
     <div className="min-h-screen flex flex-col bg-gray-100">
-      <div className="flex-1 flex items-center justify-center px-4 py-8">
+      <div className="flex-1 flex items-center justify-center px-4 py-4 sm:py-8">
         <div className="max-w-7xl w-full mx-auto">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="grid lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-center">
             {/* Left Side - Brand Information */}
-            <div className="text-center lg:text-left">
-              <h1 className="text-5xl lg:text-6xl font-bold text-blood-red mb-4">BloodSource</h1>
-              <p className="text-xl text-gray-600 max-w-md mx-auto lg:mx-0">
+            <div className="text-center lg:text-left order-2 lg:order-1">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-blood-red mb-4">BloodSource</h1>
+              <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-md mx-auto lg:mx-0">
                 BloodSource helps you connect and share with the people in your life.
               </p>
             </div>
             
             {/* Right Side - Login Form */}
-            <div className="flex justify-center lg:justify-end">
+            <div className="flex justify-center lg:justify-end order-1 lg:order-2">
               <Card className="w-full max-w-md shadow-xl">
-                <CardContent className="p-8">
+                <CardContent className="p-4 sm:p-6 md:p-8">
                 <div className="text-center mb-6">
-                  <h2 className="text-2xl font-bold text-gray-800 mb-2">Hi, Welcome Back 👋</h2>
-                  <p className="text-gray-600">It's great to see you again.</p>
+                  <h2 className="text-xl sm:text-2xl font-bold text-gray-800 mb-2">Hi, Welcome Back 👋</h2>
+                  <p className="text-sm sm:text-base text-gray-600">It's great to see you again.</p>
                 </div>
                 
                 <form onSubmit={handleLogin} className="space-y-4">
@@ -278,7 +278,7 @@ export default function Landing() {
       {/* Footer */}
       <div className="mt-auto w-full bg-white border-t border-gray-200 py-4">
         <div className="max-w-7xl mx-auto px-4">
-          <div className="flex flex-wrap justify-center text-sm text-gray-500 space-x-4">
+          <div className="flex flex-wrap justify-center text-xs sm:text-sm text-gray-500 space-x-2 sm:space-x-4">
             <a href="#" className="hover:text-gray-700">About</a>
             <a href="#" className="hover:text-gray-700">Download the app</a>
             <a href="#" className="hover:text-gray-700">Boka AI</a>
@@ -300,10 +300,10 @@ export default function Landing() {
 
       {/* Member Registration Modal */}
       <Dialog open={showRegisterModal} onOpenChange={setShowRegisterModal}>
-        <DialogContent className="max-w-md">
+        <DialogContent className="max-w-md mx-4 sm:mx-auto">
           <DialogHeader>
-            <DialogTitle className="text-center text-blood-red">New member registration 🎉</DialogTitle>
-            <p className="text-center text-gray-600">You are on step 1 out of 2.</p>
+            <DialogTitle className="text-center text-blood-red text-lg sm:text-xl">New member registration 🎉</DialogTitle>
+            <p className="text-center text-gray-600 text-sm sm:text-base">You are on step 1 out of 2.</p>
           </DialogHeader>
           
           <form onSubmit={handleRegister} className="space-y-4">
@@ -418,10 +418,10 @@ export default function Landing() {
 
       {/* Staff Registration Modal */}
       <Dialog open={showStaffRegisterModal} onOpenChange={setShowStaffRegisterModal}>
-        <DialogContent className="max-w-md">
+        <DialogContent className="max-w-md mx-4 sm:mx-auto max-h-[90vh] overflow-y-auto">
           <DialogHeader>
-            <DialogTitle className="text-center text-blood-red">New Staff Registration</DialogTitle>
-            <p className="text-center text-gray-600">Fill out the form below to register as a staff member.</p>
+            <DialogTitle className="text-center text-blood-red text-lg sm:text-xl">New Staff Registration</DialogTitle>
+            <p className="text-center text-gray-600 text-sm sm:text-base">Fill out the form below to register as a staff member.</p>
           </DialogHeader>
           
           <form onSubmit={handleStaffRegister} className="space-y-4">
@@ -520,9 +520,9 @@ export default function Landing() {
 
       {/* Staff Success Modal */}
       <Dialog open={showStaffSuccessModal} onOpenChange={setShowStaffSuccessModal}>
-        <DialogContent className="max-w-md">
+        <DialogContent className="max-w-md mx-4 sm:mx-auto">
           <DialogHeader>
-            <DialogTitle className="text-center text-blood-red">New Staff Registration</DialogTitle>
+            <DialogTitle className="text-center text-blood-red text-lg sm:text-xl">New Staff Registration</DialogTitle>
           </DialogHeader>
           
           <div className="bg-green-50 rounded-lg p-6">
