@@ -9,6 +9,7 @@ import NotFound from "@/pages/not-found";
 import Landing from "@/pages/landing";
 import Dashboard from "@/pages/dashboard";
 import Newsfeed from "@/pages/newsfeed";
+import Careers from "@/pages/careers";
 
 function AuthProvider({ children }: { children: React.ReactNode }) {
   const { data: user, isLoading } = useQuery({
@@ -44,6 +45,7 @@ function Router() {
       <Route path="/" component={user ? (user.isStaff ? Dashboard : Newsfeed) : Landing} />
       <Route path="/dashboard" component={user?.isStaff ? Dashboard : Landing} />
       <Route path="/newsfeed" component={user && !user.isStaff ? Newsfeed : Landing} />
+      <Route path="/careers" component={Careers} />
       <Route component={NotFound} />
     </Switch>
   );
