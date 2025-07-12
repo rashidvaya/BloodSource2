@@ -30,10 +30,12 @@ import {
 import { useQuery } from "@tanstack/react-query";
 import { getCurrentUser } from "@/lib/auth";
 import { getAuthToken } from "@/lib/auth";
+import ProfileDropdown from "@/components/profile-dropdown";
 
 export default function Newsfeed() {
   const [searchQuery, setSearchQuery] = useState("");
   const [postContent, setPostContent] = useState("");
+  const [profileDropdownOpen, setProfileDropdownOpen] = useState(false);
 
   const { data: currentUser } = useQuery({
     queryKey: ["auth", "me"],
@@ -145,17 +147,28 @@ export default function Newsfeed() {
               </Button>
             </div>
             
-            <div className="flex items-center space-x-1 sm:space-x-2">
+            <div className="flex items-center space-x-1 sm:space-x-2 relative">
               <Avatar className="h-6 w-6 sm:h-8 sm:w-8">
                 <AvatarImage src={currentUser?.profileImage} />
                 <AvatarFallback>{currentUser?.fullName?.[0]}</AvatarFallback>
               </Avatar>
               <span className="text-xs sm:text-sm font-medium hidden sm:block">{currentUser?.fullName}</span>
-              <Button variant="ghost" size="sm" className="p-1 sm:p-2">
+              <Button 
+                variant="ghost" 
+                size="sm" 
+                className="p-1 sm:p-2"
+                onClick={() => setProfileDropdownOpen(!profileDropdownOpen)}
+              >
                 <svg className="h-4 w-4 sm:h-5 sm:w-5" viewBox="0 0 20 20" fill="currentColor">
                   <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
                 </svg>
               </Button>
+              
+              <ProfileDropdown 
+                user={currentUser}
+                isOpen={profileDropdownOpen}
+                onClose={() => setProfileDropdownOpen(false)}
+              />
             </div>
           </div>
         </div>
