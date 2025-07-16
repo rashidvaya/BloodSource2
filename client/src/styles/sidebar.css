@@ -1,0 +1,5 @@
+/* Sidebar scrollable: always allow vertical scroll on hover/focus */
+.sidebar-scrollable:hover,
+.sidebar-scrollable:focus {
+  overflow-y: auto !important;
+} 
