@@ -284,7 +284,7 @@ export default function Landing() {
                 
                 <div className="text-center mt-6">
                   <Button
-                    onClick={() => setShowRegisterModal(true)}
+                    onClick={() => window.open('/register', '_blank')}
                     className="w-full bg-success-green hover:bg-green-700"
                   >
                     Create new account
